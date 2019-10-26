@@ -1,0 +1,24 @@
+
+
+<IfModule mod_php5.c>
+    #Session timeout
+    #php_value session.cookie_lifetime 300
+    # 300 = 5 dakika
+    #php_value session.gc_maxlifetime 300
+</IfModule>
+
+# Do the regex check against the URI here, if match, set the "require_auth" var
+SetEnvIf Request_URI ^/admin/url require_auth=true
+
+
+AuthName "Şifre Koruması"
+AuthType Basic
+AuthUserFile D:\wamp64\www\cafeLezzet\admin\.htpasswd
+require valid-user
+
+
+# güvenlik için 
+
+#SSLOptions +StrictRequire
+#SSLRequireSSL
+#SSLRequire %{HTTP_HOST} eq "www.testsitesi.xyz"

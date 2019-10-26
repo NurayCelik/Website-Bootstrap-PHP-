@@ -1,0 +1,19 @@
+.success
+{
+	color: forestgreen;
+	font-size: 18px;
+}
+.error
+{
+	color: red;
+	font-size: 18px;
+}
+.pagination>.secili>a,.pagination>.active>a:hover{
+	background-color: rgba(52,73,94,0.94) !important;
+	border-color:  rgba(52,73,94,0.94) !important;
+	color:#fff !important;
+}
+.pagination>li>a{
+    color: #73879C !important;
+    border:1px solid #cecee8;
+}

@@ -1,0 +1,36 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^cafelezzet [NC]
+RewriteRule ^(.*)$ http://www.cafelezzet.com/$1 [L,R=301,NC]
+
+ErrorDocument 404 http://localhost/cafeLezzet/404.php
+ErrorDocument 403 http://localhost/cafeLezzet/404.php
+
+RewriteRule ^cafelezzet$ index.php [NC,L]
+RewriteRule ^hakkimizda$ hakkimizda.php [NC,L]
+RewriteRule ^urunler$ urunler.php [NC,L]
+RewriteRule ^bize-ulasin$ iletisim.php [NC,L]
+RewriteRule ^catering$ catering.php [NC,L]
+RewriteRule ^sitemap.xml$ iletisim.php [NC,L]
+RewriteRule ^haberler$ medya.php [NC,L]
+
+# css, js, resim dosylarını korumak için, sunucuya yukleyince websitesi adresi yazılır 2. satırdaki localhost yerine
+#RewriteCond %{HTTP_REFERER} !^$
+#RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?localhost/cafeLezzet [NC]
+#RewriteRule \.(css|js|jpg|gif)$ - [NC,F,L]
+
+
+
+
+<Files /404.php>
+ AuthType none
+</Files>
+
+#istediğimiz klasöre erişim engeli
+#ErrorDocument 403 / http://localhost/cafelezzet/admin/404.php
+
+# güvenlik için 
+#SSLOptions +StrictRequire
+#SSLRequireSSL
+#SSLRequire %{HTTP_HOST} eq "www.testsitesi.xyz"
+
