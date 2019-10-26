@@ -32,5 +32,5 @@ RewriteRule ^haberler$ medya.php [NC,L]
 # güvenlik için 
 #SSLOptions +StrictRequire
 #SSLRequireSSL
-#SSLRequire %{HTTP_HOST} eq "www.testsitesi.xyz"
+#SSLRequire %{HTTP_HOST} eq "www.cafe.xyz"
 
